@@ -1,0 +1,31 @@
+pipeline:
+  job_name: ingestion_job
+
+destination:
+  name: bq_gold
+  type: bigquery
+  project_id: african-tech-skills-c295
+  dataset_id: 03_gold
+  location: EU
+
+sources:
+  - name: gcs_raw
+    type: gcs
+    bucket_name: bkt-dp-tf-state
+    tables:
+      - name: new_customers
+        object_name: demo.csv
+        mode: append
+        sep: ";"
+        schema:
+          - { name: customer_id, type: INT64, mode: REQUIRED }
+
+  - name: drive_reports
+    type: google_drive
+    tables:
+      - name: monthly_report
+        file_id: "1PGuUkYTSjOSIjIv_qi3ga6lsH8Sz7bxn"
+        mode: append
+        sep: ","
+        schema:
+          - { name: report_date, type: DATE, mode: REQUIRED }
