@@ -19,13 +19,19 @@ sources:
         sep: ";"
         schema:
           - { name: customer_id, type: INT64, mode: REQUIRED }
-
-  - name: drive_reports
-    type: google_drive
-    tables:
-      - name: monthly_report
-        file_id: "1PGuUkYTSjOSIjIv_qi3ga6lsH8Sz7bxn"
+      - name: new_customers_3
+        object_name: demo.csv
         mode: append
-        sep: ","
+        sep: ";"
         schema:
-          - { name: report_date, type: DATE, mode: REQUIRED }
+          - { name: customer_id, type: INT64, mode: REQUIRED }
+
+  # - name: drive_reports
+  #   type: google_drive
+  #   tables:
+  #     - name: monthly_report
+  #       file_id: "1PGuUkYTSjOSIjIv_qi3ga6lsH8Sz7bxn"
+  #       mode: append
+  #       sep: ","
+  #       schema:
+  #         - { name: report_date, type: DATE, mode: REQUIRED }

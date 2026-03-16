@@ -1,4 +1,4 @@
-from pipeline.ingestion_pipeline import IngestionJob
+from pipeline.ingestion_job import IngestionJob
 from sources.google_drive_source import GoogleDriveSource
 from destinations.print_destination import PrintDestination
 from destinations.bigquery_destination import BigQueryDestination
