@@ -3,7 +3,7 @@ import pandas as pd
 
 class AbstractDestination(ABC):
     @abstractmethod
-    def write(self, records) -> None:
+    def write(self, df: pd.DataFrame) -> None:
         """Consume records"""
         pass
 

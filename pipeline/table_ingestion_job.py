@@ -1,7 +1,7 @@
 from sources.abstract_source import AbstractSource
 from destinations.abstract_destination import AbstractDestination
          
-class IngestionJob:
+class TableIngestionJob:
     def __init__(self, source: AbstractSource, destination: AbstractDestination):
         self.source = source
         self.destination = destination
