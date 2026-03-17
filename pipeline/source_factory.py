@@ -12,7 +12,7 @@ def build_source(source_cfg: dict, table_cfg: dict):
         )
 
     if stype == "google_drive":
-        sep = table_cfg.get("sep", source_cfg.get("default_sep", ","))
+        sep = table_cfg["sep"]
         return GoogleDriveSource(
             file_id=table_cfg["file_id"],
             sep=sep,

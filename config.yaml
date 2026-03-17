@@ -13,25 +13,25 @@ sources:
     type: gcs
     bucket_name: bkt-dp-tf-state
     tables:
-      - name: new_customers
+      - name: new_customers_17_06
         object_name: demo.csv
         mode: append
         sep: ";"
         schema:
           - { name: customer_id, type: INT64, mode: REQUIRED }
-      - name: new_customers_3
+      - name: new_customers_17_06
         object_name: demo.csv
         mode: append
         sep: ";"
         schema:
           - { name: customer_id, type: INT64, mode: REQUIRED }
 
-  # - name: drive_reports
-  #   type: google_drive
-  #   tables:
-  #     - name: monthly_report
-  #       file_id: "1PGuUkYTSjOSIjIv_qi3ga6lsH8Sz7bxn"
-  #       mode: append
-  #       sep: ","
-  #       schema:
-  #         - { name: report_date, type: DATE, mode: REQUIRED }
+  - name: drive_reports
+    type: google_drive
+    tables:
+      - name: monthly_report_17_06
+        file_id: "1PGuUkYTSjOSIjIv_qi3ga6lsH8Sz7bxn"
+        mode: append
+        sep: ";"
+        schema:
+          - { name: report_date, type: DATE, mode: REQUIRED }
